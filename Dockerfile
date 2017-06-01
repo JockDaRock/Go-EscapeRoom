@@ -1,21 +1,21 @@
 FROM golang:alpine AS build-env
 
-COPY /test-server.go .
+COPY /escape-button-server.go .
 
-RUN go build -o test-server test-server.go && ls && pwd
+RUN go build -o escape-button-server escape-button-server.go && ls && pwd
 
 
 FROM alpine
 
 WORKDIR /
 
-COPY --from=build-env /go/test-server .
+COPY --from=build-env /go/escape-button-server .
 
 COPY /EscapeButton .
 
 EXPOSE 3000
 
-ENTRYPOINT ./test-server
+ENTRYPOINT ./escape-button-server
 
 LABEL "cisco.cpuarch"="x86_64"
 LABEL "cisco.resources.cpu"="50"
