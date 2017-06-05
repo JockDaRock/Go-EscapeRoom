@@ -25,4 +25,3 @@ LABEL "cisco.cpuarch"="x86_64" \
 EXPOSE 3000
 
 CMD  ["./escape-button-server"]
-
