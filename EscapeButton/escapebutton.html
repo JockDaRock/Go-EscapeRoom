@@ -15,7 +15,8 @@
 
 	<div id="maincontent" align="center">
 		<!--<img src="./Instant No Button! Star Wars funnies FTW!_files/vader.jpg" alt="Darth Vader FML">-->
-		<h3>PRESS IN DIRE SITUATIONS</h3>
+		<h3 id="Freedom">Press the button and let's get out of here!!!</h3>
+		<img id="CapCloud" src="Devnet_escaperoom_2_800x1000-300x375.png">
 		<div class="darthvadernobutton">
 			<audio id="nooo">
 				<source src="nooo.ogg" type="audio/ogg">
@@ -121,6 +122,10 @@
 							}
 						};
 						http.send(JSON.stringify(data));
+						freedom = 'CaptainCloudVegas.jpg';
+						new_message = "AND WE'RE OUT!!!";
+                    	document.getElementById('CapCloud').src=freedom;
+                    	document.getElementById('Freedom').innerHTML=new_message;
 					};
 				</script>
 			</div>
