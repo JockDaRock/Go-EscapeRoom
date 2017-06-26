@@ -100,20 +100,14 @@
 				<button id="no-button"></button>
 				<script>
 					var http = new XMLHttpRequest();
-					var url = "https://api.ciscospark.com/v1/messages";
-					var data = {
-						"roomId": "Y2lzY29zcGFyazovL3VzL1JPT00vMWVmOTU4MTUtNjlhNS0zNjMxLWI1NzgtOWI0M2RkZmY3MDQz",
-						"markdown": "**ACCESS GRANTED**"
-					}
+					var url = "http://10.10.140.130:8000/on_pins";
 					var a = document.createElement('audio');
 					canAudio = !!(a.canPlayType && (a.canPlayType('audio/mpeg;') || a.canPlayType('audio/ogg;') || a.canPlayType('audio/mp4;')));
 					if(!canAudio)
 						document.getElementById('no-button').style.display = 'none';
 
 					document.getElementById('no-button').onclick = function(){
-						http.open("POST", url, true);
-						http.setRequestHeader("Content-type", "application/json");
-						http.setRequestHeader("Authorization", "Bearer MDNjMTQzZGEtNTkzZi00Yzk1LWI0NmMtYjBlZTQwZmMwYWE2NzRkOWRiY2ItNjcy");
+						http.open("GET", url, true);
 						http.onloadend = function() {
 							if(http.status == 200) {
 								document.getElementById('access_granted').play();
