@@ -100,7 +100,10 @@
 				<button id="no-button"></button>
 				<script>
 					var http = new XMLHttpRequest();
+					var http1 = new XMLHttpRequest();
+					var url1 = "http://10.40.52.61:5555/door/door2;
 					var url = "http://10.10.140.130:8000/on_pins";
+					var data = {"key": "on"};
 					var a = document.createElement('audio');
 					canAudio = !!(a.canPlayType && (a.canPlayType('audio/mpeg;') || a.canPlayType('audio/ogg;') || a.canPlayType('audio/mp4;')));
 					if(!canAudio)
@@ -115,8 +118,12 @@
 								document.getElementById('nooo').play();
 							}
 						};
-						http.send(JSON.stringify(data));
+						http.send();
 						freedom = 'CaptainCloudVegas.jpg';
+						http1.open("POST", url1, true);
+						http1.setRequestHeader("Content-type", "application/json");
+						http1
+						http1.send(JSON.stringify(data))
 						new_message = "AND WE'RE OUT!!!";
                     	document.getElementById('CapCloud').src=freedom;
                     	document.getElementById('Freedom').innerHTML=new_message;
